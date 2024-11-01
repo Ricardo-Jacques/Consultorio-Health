@@ -1,0 +1,37 @@
+﻿.title {
+    padding: 15px 0px 0px 0px;
+    margin: auto;
+    width: 300px;
+    font-size: 2em;
+    color: #003B38;
+}
+
+section.agenda {
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    margin: auto;
+}
+
+.form {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Define 2 colunas com largura igual */
+    grid-template-rows: repeat(2, auto); /* Define 2 linhas com altura automática */
+    gap: 10px;
+    max-width: 250px;
+    width: 100%;
+}
+
+.form-input {
+    border: 1px solid #000000;
+    border-radius: 5px;
+    width: 200px;
+    height: 25px
+}
+
+.submit {
+    font-size: 1.2em;
+    width: 300px;
+    padding: 12px;
+    margin: 50px 0px 0px 0px;
+}

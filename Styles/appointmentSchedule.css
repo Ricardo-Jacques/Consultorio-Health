@@ -1,0 +1,101 @@
+﻿.previous-page {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100px;
+    margin: 80px 0px 10px 30px;
+}
+
+.previous-page > a {
+    font-size: 1.8em;
+    color: #000000;
+    text-decoration: none;
+}
+
+section.consultation {
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    margin: auto;
+}
+
+.consultation > div { /* Alinha o conteúdo da section em 2 linhas */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.consultation-titles {
+    font-size: 1.8em;
+    color: #003B38;
+}
+
+.schedules {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Define 2 colunas com largura igual */
+    grid-template-rows: repeat(4, auto); /* Define 4 linhas com altura automática */
+    gap: 10px;
+    max-width: 250px;
+    width: 100%;
+}
+
+.schedules-button {
+    font-size: 1.4em;
+    color: black;
+    width: 100px;
+    height: 35px;
+    background-color: white;
+    padding: 0px 5px !important;
+    cursor: pointer;
+}
+
+.schedules-button:hover {
+    background-color: #003B38;
+    transition: 0.7s;
+}
+
+.consultation-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    max-width: 250px;
+    width: 100%;
+    height: 200px;
+    background-color: #cbcbcb;
+    padding: 10px 0px 0px 10px;
+    font-size: 1.4em;
+}
+
+button.next-page {
+    font-size: 1.2em;
+    width: 300px;
+    padding: 12px;
+    margin: 50px 0px 0px 0px;
+}
+
+/* Calendar css */
+.calendar {
+    font-family: Arial, sans-serif;
+}
+
+.month {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.weekdays, .days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+}
+
+.days div {
+    text-align: center;
+    padding: 8px;
+    border-radius: 4px;
+    }
+
+.days div:hover {
+    background-color: #ddd;
+    cursor: pointer;
+}

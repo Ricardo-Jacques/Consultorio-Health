@@ -1,0 +1,40 @@
+﻿
+header > nav {
+    display: flex;
+    justify-content: space-between;
+    background-color: #A4CAC9;
+    padding: 15px 0px 0px 0px !important;
+}
+
+div.main-title {
+    display: flex;
+    max-width: 500px;
+    width: 100%;
+    color: #003B38;
+    margin: 0px 0px 0px 80px !important;
+}
+
+.main-title > h1 {
+    font-size: 1.4em;
+}
+
+h1 > strong {
+    font-size: 2em;
+}
+
+.nav-bar {
+    display: flex;
+    justify-content: space-between;
+    max-width: 600px;
+    width: 100%;
+}
+
+.nav-bar-item {
+    font-size: 1.5em;
+    text-decoration: none;
+    color: #F1B212 !important;
+}
+
+ul {
+    list-style: none;
+}
