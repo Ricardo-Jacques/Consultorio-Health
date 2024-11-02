@@ -31,7 +31,7 @@ function renderCalendar(month, year) {
         daysElement.appendChild(dayElement);
     }
 }
-
+  
 function selectDate(day, month, year) {
     selectedDay = day;
     selectedMonth = month;

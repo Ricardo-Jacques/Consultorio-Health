@@ -19,10 +19,10 @@
     <section class="consultation">
         <div class="column">
             <h2 class="consultation-titles">Datas disponíveis</h2>
-            <div class="calendar" style="width: 300px;">
+            <div class="calendar" style="width: 300px;" runat="server">
                 <div class="month">
                     <button onclick="prevMonth()">❮</button>
-                    <h2 id="monthYear"></h2>
+                    <h2 id="monthYear" runat="server"></h2>
                     <button onclick="nextMonth()">❯</button>
                 </div>
                 <div class="weekdays">
@@ -34,7 +34,7 @@
                     <div>Sex</div>
                     <div>Sab</div>
                 </div>
-                <div class="days" id="days"></div>
+                <div class="days" id="days" runat="server"></div>
             </div>
         </div>
         <div class="column">
