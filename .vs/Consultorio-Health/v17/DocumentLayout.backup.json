@@ -3,12 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\Master\\source\\repos\\Consultorio-Health\\Consultorio-Health\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{2B000B04-0DE0-4895-8F5C-8AD04374565E}|Consultorio-Health.csproj|c:\\users\\master\\source\\repos\\consultorio-health\\consultorio-health\\pages\\appointmentschedule.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{2B000B04-0DE0-4895-8F5C-8AD04374565E}|Consultorio-Health.csproj|C:\\Users\\Master\\source\\repos\\Consultorio-Health\\Consultorio-Health\\pages\\home.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{2B000B04-0DE0-4895-8F5C-8AD04374565E}|Consultorio-Health.csproj|solutionrelative:pages\\home.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2B000B04-0DE0-4895-8F5C-8AD04374565E}|Consultorio-Health.csproj|C:\\Users\\Master\\source\\repos\\Consultorio-Health\\Consultorio-Health\\pages\\appointmentschedule.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2B000B04-0DE0-4895-8F5C-8AD04374565E}|Consultorio-Health.csproj|solutionrelative:pages\\appointmentschedule.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2B000B04-0DE0-4895-8F5C-8AD04374565E}|Consultorio-Health.csproj|C:\\Users\\Master\\source\\repos\\Consultorio-Health\\Consultorio-Health\\pages\\appointmentschedule.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
-      "RelativeMoniker": "D:0:0:{2B000B04-0DE0-4895-8F5C-8AD04374565E}|Consultorio-Health.csproj|solutionrelative:pages\\appointmentschedule.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+      "AbsoluteMoniker": "D:0:0:{2B000B04-0DE0-4895-8F5C-8AD04374565E}|Consultorio-Health.csproj|C:\\Users\\Master\\source\\repos\\Consultorio-Health\\Consultorio-Health\\styles\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{2B000B04-0DE0-4895-8F5C-8AD04374565E}|Consultorio-Health.csproj|solutionrelative:styles\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{2B000B04-0DE0-4895-8F5C-8AD04374565E}|Consultorio-Health.csproj|C:\\Users\\Master\\source\\repos\\Consultorio-Health\\Consultorio-Health\\scripts\\site.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
@@ -22,17 +26,17 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "AppointmentSchedule.aspx.cs",
               "DocumentMoniker": "C:\\Users\\Master\\source\\repos\\Consultorio-Health\\Consultorio-Health\\Pages\\AppointmentSchedule.aspx.cs",
               "RelativeDocumentMoniker": "Pages\\AppointmentSchedule.aspx.cs",
               "ToolTip": "C:\\Users\\Master\\source\\repos\\Consultorio-Health\\Consultorio-Health\\Pages\\AppointmentSchedule.aspx.cs",
               "RelativeToolTip": "Pages\\AppointmentSchedule.aspx.cs",
-              "ViewState": "AgIAAD4AAAAAAAAAAAAgwB8AAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAC4AAAAAAAAAAAD4vygAAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-02T15:39:49.859Z",
               "IsPinned": true,
@@ -44,20 +48,33 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "AppointmentSchedule.aspx",
-              "DocumentMoniker": "C:\\Users\\Master\\source\\repos\\Consultorio-Health\\Consultorio-Health\\Pages\\AppointmentSchedule.aspx",
-              "RelativeDocumentMoniker": "Pages\\AppointmentSchedule.aspx",
-              "ToolTip": "C:\\Users\\Master\\source\\repos\\Consultorio-Health\\Consultorio-Health\\Pages\\AppointmentSchedule.aspx",
-              "RelativeToolTip": "Pages\\AppointmentSchedule.aspx",
+              "DocumentIndex": 0,
+              "Title": "Home.aspx",
+              "DocumentMoniker": "C:\\Users\\Master\\source\\repos\\Consultorio-Health\\Consultorio-Health\\Pages\\Home.aspx",
+              "RelativeDocumentMoniker": "Pages\\Home.aspx",
+              "ToolTip": "C:\\Users\\Master\\source\\repos\\Consultorio-Health\\Consultorio-Health\\Pages\\Home.aspx",
+              "RelativeToolTip": "Pages\\Home.aspx",
               "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2024-11-02T15:39:02.139Z",
+              "WhenOpened": "2024-11-03T14:35:47.424Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
+              "Title": "site.css",
+              "DocumentMoniker": "C:\\Users\\Master\\source\\repos\\Consultorio-Health\\Consultorio-Health\\Styles\\site.css",
+              "RelativeDocumentMoniker": "Styles\\site.css",
+              "ToolTip": "C:\\Users\\Master\\source\\repos\\Consultorio-Health\\Consultorio-Health\\Styles\\site.css",
+              "RelativeToolTip": "Styles\\site.css",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2024-11-03T14:27:29.782Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "site.js",
               "DocumentMoniker": "C:\\Users\\Master\\source\\repos\\Consultorio-Health\\Consultorio-Health\\Scripts\\site.js",
               "RelativeDocumentMoniker": "Scripts\\site.js",

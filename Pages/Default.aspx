@@ -1,6 +1,6 @@
 ﻿<%@ Page Title="Home Page" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="Consultorio_Health._Default" %>
 
-<asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
+<asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server" style="margin: 0px !important;">
     <%--CSS--%>
     <link href="/Styles/header.css" rel="stylesheet" type="text/css" />
     <link href="/Styles/site.css" rel="stylesheet" type="text/css" />
