@@ -20,11 +20,13 @@
         <div class="column">
             <h2 class="consultation-titles">Datas disponíveis</h2>
             <div class="calendar" style="width: 300px;" runat="server">
-                <div class="month">
-                    <button onclick="prevMonth()">❮</button>
-                    <h2 id="monthYear" runat="server"></h2>
-                    <button onclick="nextMonth()">❯</button>
-                </div>
+                <form id="form1" runat="server">
+                    <div class="month" runat="server">
+                        <asp:Button ID="prevButton" runat="server" OnClick="PrevMonth" />
+                        <h2 id="monthYear" runat="server"></h2>
+                        <asp:Button ID="nextButton" runat="server" OnClick="NextMonth" />
+                    </div>
+                </form>
                 <div class="weekdays">
                     <div>Dom</div>
                     <div>Seg</div>

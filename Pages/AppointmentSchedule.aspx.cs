@@ -13,32 +13,71 @@ namespace Consultorio_Health.Pages.AppointmentSchedule
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            RenderCalendar(year, month);
+            if (!IsPostBack)
+            {
+                ViewState["currentYear"] = DateTime.Now.Year;
+                ViewState["currentMonth"] = DateTime.Now.Month;
+            }
+
+            int currentYear = (int)ViewState["currentYear"];
+            int currentMonth = (int)ViewState["currentMonth"];
+
+            RenderCalendar(currentYear, currentMonth);
         }
 
-
-        //Variáveis
-        int year = DateTime.Now.Year;
-        int month = DateTime.Now.Month;
-        string currentMonth = DateTime.Now.Month.ToString();
-        public void RenderCalendar(int year, int month)
+        public void RenderCalendar(int currentYear, int currentMonth)
         {
-            DateTime firstDay = new DateTime(DateTime.Now.Year, DateTime.Now.Month, 1);
-            monthYear.InnerHtml = currentMonth;
+            DateTime firstDay = new DateTime(currentYear, currentMonth, 1);
+            monthYear.InnerHtml = $"{firstDay.ToString("MMMM")} {currentYear}";
 
-            //Preenche os dias do mês
-            int daysInMonth = DateTime.DaysInMonth(year, month);
+            days.Controls.Clear();
+
+            // Preenche os dias do mês
+            int daysInMonth = DateTime.DaysInMonth(currentYear, currentMonth);
             for (int i = 1; i <= daysInMonth; i++)
             {
-                HtmlGenericControl day = new HtmlGenericControl();
-                day.InnerHtml = "div";
+                HtmlGenericControl day = new HtmlGenericControl("div");
                 day.InnerText = i.ToString();
                 days.Controls.Add(day);
             }
         }
-        public void PrevMonth()
-        {
 
+        protected void NextMonth(object sender, EventArgs e)
+        {
+            int currentYear = (int)ViewState["currentYear"];
+            int currentMonth = (int)ViewState["currentMonth"];
+
+            // Avança o mês
+            currentMonth++;
+            if (currentMonth > 12)
+            {
+                currentMonth = 1;
+                currentYear++;
+            }
+
+            ViewState["currentYear"] = currentYear;
+            ViewState["currentMonth"] = currentMonth;
+
+            RenderCalendar(currentYear, currentMonth);
+        }
+
+        protected void PrevMonth(object sender, EventArgs e)
+        {
+            int currentYear = (int)ViewState["currentYear"];
+            int currentMonth = (int)ViewState["currentMonth"];
+
+            // Retrocede o mês
+            currentMonth--;
+            if (currentMonth < 1)
+            {
+                currentMonth = 12;
+                currentYear--;
+            }
+
+            ViewState["currentYear"] = currentYear;
+            ViewState["currentMonth"] = currentMonth;
+
+            RenderCalendar(currentYear, currentMonth);
         }
     }
 }

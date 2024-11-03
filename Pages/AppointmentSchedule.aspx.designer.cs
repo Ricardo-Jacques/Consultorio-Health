@@ -15,6 +15,24 @@ namespace Consultorio_Health.Pages.AppointmentSchedule
     {
 
         /// <summary>
+        /// Controle form1.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Para modificar, mova a declaração de campo do arquivo de designer a um arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+
+        /// <summary>
+        /// Controle prevButton.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Para modificar, mova a declaração de campo do arquivo de designer a um arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button prevButton;
+
+        /// <summary>
         /// Controle monthYear.
         /// </summary>
         /// <remarks>
@@ -22,6 +40,15 @@ namespace Consultorio_Health.Pages.AppointmentSchedule
         /// Para modificar, mova a declaração de campo do arquivo de designer a um arquivo code-behind.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl monthYear;
+
+        /// <summary>
+        /// Controle nextButton.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Para modificar, mova a declaração de campo do arquivo de designer a um arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button nextButton;
 
         /// <summary>
         /// Controle days.
