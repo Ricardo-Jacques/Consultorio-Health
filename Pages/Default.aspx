@@ -2,6 +2,7 @@
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server" style="margin: 0px !important;">
     <%--CSS--%>
+    <link href="/Styles/global.css" rel="stylesheet" type="text/css" />
     <link href="/Styles/header.css" rel="stylesheet" type="text/css" />
     <link href="/Styles/site.css" rel="stylesheet" type="text/css" />
 
@@ -42,9 +43,9 @@
                 ever since the 1500s.
                     </p>
                 </div>
-                <button class="button">
-                    <a asp-controller="AppointmentSchedule" asp-action="Index">Agende uma consulta</a>
-                </button>
+                <asp:LinkButton ID="AppointmentPage" class="button" runat="server" OnClick="btnRedirecionar_Click">
+                    Agende uma consulta
+                </asp:LinkButton>
             </div>
             <img src="~/images/pexels.png" alt="Alternate Text" class="imagem" />
         </section>

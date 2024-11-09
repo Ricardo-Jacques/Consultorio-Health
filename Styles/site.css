@@ -4,9 +4,15 @@
 }
 
 a {
-    text-decoration: none;
-    color: #ffffff;
+    text-decoration: none !important;
+    color: #ffffff !important;
 }
+
+a:-webkit-any-link {
+    color: #000000; /* Escolha a cor desejada ou 'inherit' para herdar do pai */
+    text-decoration: none; /* Remova a decoração do link, se desejado */
+}
+
 
 section.home {
     display: flex;
@@ -30,11 +36,12 @@ section.home {
     padding: 0px 0px 10px 0px !important;
 }
 
-.home > div > button {
-    max-width: 350px;
-    width: 100%;
+.home > div > a {
+    max-width: 350px !important;
+    width: 100% !important;
     padding: 15px !important;
-    font-size: 1.6em;
+    font-size: 1.6em !important;
+    text-align: center;
 }
 
 .imagem {

@@ -13,5 +13,11 @@ namespace Consultorio_Health.Pages.AppointmentSchedule
         {
 
         }
+
+        protected void btnRedirecionar_Appointment(object sender, EventArgs e)
+        {
+            // Redireciona o usuário para outra página
+            Response.Redirect("AppointmentSchedule.aspx");
+        }
     }
 }
