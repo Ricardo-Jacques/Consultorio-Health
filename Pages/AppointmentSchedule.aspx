@@ -15,7 +15,7 @@
             <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-chevron-left" viewBox="0 0 16 16">
                 <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0" />
             </svg>
-            <asp:LinkButton ID="HomePage" class="button" runat="server" OnClick="btnRedirecionar_Home">
+            <asp:LinkButton ID="HomePage" class="button" runat="server" OnClick="btnRedirect_Home">
                 Voltar
             </asp:LinkButton>
         </nav>
@@ -29,7 +29,8 @@
                                 <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0" />
                             </svg>
                         </asp:LinkButton>
-                        <h2 id="monthYear" runat="server"></h2>
+                        <h2 id="SelectedMonth" runat="server"></h2>
+                        <h2 id="SelectedYear" runat="server"></h2>
                         <asp:LinkButton ID="nextButton" runat="server" OnClick="NextMonth">
                             <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
                                 <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708"/>
@@ -88,7 +89,7 @@
             </div>
         </section>
         <div style="display: flex; justify-content: center; width: 100%;">
-            <asp:LinkButton ID="AgendaPage" class="button next-page" runat="server" OnClick="btnRedirecionar_Agenda">
+            <asp:LinkButton ID="AgendaPage" class="button next-page" runat="server" OnClick="btnRedirect_Agenda">
                 Próximo 
             </asp:LinkButton>
         </div>

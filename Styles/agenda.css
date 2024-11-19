@@ -6,11 +6,23 @@
     color: #003B38;
 }
 
+.previous-page {
+    display: flex;
+    align-items: center;
+    margin: 20px 0px 10px 30px;
+}
+
+.previous-page > a {
+    font-size: 1.8em;
+    color: #000000;
+    text-decoration: none;
+}
+
 section.agenda {
     display: flex;
     justify-content: space-between;
     width: 90%;
-    margin: auto;
+    margin: 20px 0px 10px 30px;
 }
 
 .form {
@@ -29,9 +41,43 @@ section.agenda {
     height: 25px
 }
 
-.submit {
-    font-size: 1.2em;
-    width: 300px;
-    padding: 12px;
-    margin: 50px 0px 0px 0px;
+/* Ocultar os botões para aumentar ou diminuir do input telefone */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type="number"] {
+    -moz-appearance: textfield; /* Para Firefox */
+}
+
+.consultation-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    border-radius: 0px 0px 5px 5px;
+    width: 250px;
+    height: 200px;
+    background-color: #cbcbcb;
+    padding: 10px 0px 0px 10px;
+    font-size: 1.4em;
+}
+
+.consultation-info > p {
+    margin: 0px;
+}
+
+#MarcarConsulta {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2em !important;
+    color: #ffffff;
+    width: 300px !important;
+    padding: 12px !important;
+    margin: 50px 0px 0px 0px !important;
+    background-color: #003B38;
+    border-radius: 25px;
+    cursor: pointer;
 }

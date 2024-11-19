@@ -16,12 +16,12 @@ namespace Consultorio_Health.Pages.AppointmentSchedule
         {
             if (!IsPostBack)
             {
-                ViewState["currentYear"] = DateTime.Now.Year;
-                ViewState["currentMonth"] = DateTime.Now.Month;
+                Session["currentYear"] = DateTime.Now.Year;
+                Session["currentMonth"] = DateTime.Now.Month;
             }
 
-            int currentYear = (int)ViewState["currentYear"];
-            int currentMonth = (int)ViewState["currentMonth"];
+            int currentYear = (int)Session["currentYear"];
+            int currentMonth = (int)Session["currentMonth"];
 
             RenderCalendar(currentYear, currentMonth);
         }
@@ -29,9 +29,22 @@ namespace Consultorio_Health.Pages.AppointmentSchedule
         public void RenderCalendar(int currentYear, int currentMonth)
         {
             DateTime firstDay = new DateTime(currentYear, currentMonth, 1);
-            monthYear.InnerHtml = $"{firstDay.ToString("MMMM")} {currentYear}";
+            SelectedMonth.InnerHtml = $"{firstDay.ToString("MMMM")}";
+            SelectedYear.InnerHtml = $"{currentYear}";
 
             days.Controls.Clear();
+
+            // Determina o primeiro dia da semana (0 = domingo, 1 = segunda-feira, etc.)
+            int firstDayOfWeek = (int)firstDay.DayOfWeek;
+
+            // Adiciona placeholders para alinhar o primeiro dia do mês
+            for (int i = 0; i < firstDayOfWeek; i++)
+            {
+                Label placeholder = new Label();
+                placeholder.CssClass = "day-placeholder"; // Use uma classe CSS para estilizar
+                placeholder.Text = ""; // Placeholder vazio
+                days.Controls.Add(placeholder);
+            }
 
             // Preenche os dias do mês
             int daysInMonth = DateTime.DaysInMonth(currentYear, currentMonth);
@@ -45,12 +58,14 @@ namespace Consultorio_Health.Pages.AppointmentSchedule
 
                 days.Controls.Add(day);
             }
+
         }
 
         //Variáveis
         string _selectedDay;
         string _selectedTime;
         string monthString;
+        string _SelectedYear;
 
         public void SelectDate(object sender, EventArgs e)
         {
@@ -60,7 +75,6 @@ namespace Consultorio_Health.Pages.AppointmentSchedule
             // Obtenha o valor do texto e do CommandArgument
             _selectedDay = dayButton.Text;
             int _selectedMonth = int.Parse(dayButton.CommandArgument);
-
 
             if (_selectedMonth == 0)
             {
@@ -122,8 +136,11 @@ namespace Consultorio_Health.Pages.AppointmentSchedule
             // Atualize os controles com os valores selecionados
             consultationDay.InnerText = $"{_selectedDay} de {monthString} às ";
             consultationCost.InnerText = "R$ 80,00";
-            ViewState["selectedDay"] = _selectedDay;
-            ViewState["monthString"] = monthString;
+            Session["selectedDay"] = _selectedDay;
+            Session["monthString"] = monthString;
+            Session["consultationCost"] = "R$ 80,00";
+            DateTime selectedDate = new DateTime((int)Session["currentYear"], _selectedMonth, int.Parse(_selectedDay));
+            Session["selectedDate"] = selectedDate;
         }
 
         public void SelectHour(object sender, EventArgs e)
@@ -132,17 +149,17 @@ namespace Consultorio_Health.Pages.AppointmentSchedule
             LinkButton hourButton = (LinkButton)sender;
 
             _selectedTime = hourButton.Text.Trim();
-            ViewState["selectedTime"] = _selectedTime;
+            Session["selectedTime"] = _selectedTime;
 
             // Atualiza a div com a data e o horário completo
-            consultationDay.InnerText = $"{ViewState["selectedDay"]} de {ViewState["monthString"]} às {_selectedTime}";
+            consultationDay.InnerText = $"{Session["selectedDay"]} de {Session["monthString"]} às {_selectedTime}";
         }
 
 
         protected void NextMonth(object sender, EventArgs e)
         {
-            int currentYear = (int)ViewState["currentYear"];
-            int currentMonth = (int)ViewState["currentMonth"];
+            int currentYear = (int)Session["currentYear"];
+            int currentMonth = (int)Session["currentMonth"];
 
             // Avança o mês
             currentMonth++;
@@ -152,16 +169,16 @@ namespace Consultorio_Health.Pages.AppointmentSchedule
                 currentYear++;
             }
 
-            ViewState["currentYear"] = currentYear;
-            ViewState["currentMonth"] = currentMonth;
+            Session["currentYear"] = currentYear;
+            Session["currentMonth"] = currentMonth;
 
             RenderCalendar(currentYear, currentMonth);
         }
 
         protected void PrevMonth(object sender, EventArgs e)
         {
-            int currentYear = (int)ViewState["currentYear"];
-            int currentMonth = (int)ViewState["currentMonth"];
+            int currentYear = (int)Session["currentYear"];
+            int currentMonth = (int)Session["currentMonth"];
 
             // Retrocede o mês
             currentMonth--;
@@ -171,19 +188,19 @@ namespace Consultorio_Health.Pages.AppointmentSchedule
                 currentYear--;
             }
 
-            ViewState["currentYear"] = currentYear;
-            ViewState["currentMonth"] = currentMonth;
+            Session["currentYear"] = currentYear;
+            Session["currentMonth"] = currentMonth;
 
             RenderCalendar(currentYear, currentMonth);
         }
 
-        protected void btnRedirecionar_Home(object sender, EventArgs e)
+        protected void btnRedirect_Home(object sender, EventArgs e)
         {
             // Redireciona o usuário para outra página
             Response.Redirect("Default.aspx");
         }
 
-        protected void btnRedirecionar_Agenda(object sender, EventArgs e)
+        protected void btnRedirect_Agenda(object sender, EventArgs e)
         {
             // Redireciona o usuário para outra página
             Response.Redirect("Agenda.aspx");

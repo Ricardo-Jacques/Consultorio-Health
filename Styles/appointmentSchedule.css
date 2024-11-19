@@ -73,10 +73,16 @@ section.consultation {
 }
 
 a.next-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;    
     font-size: 1.2em !important;
+    color: #ffffff;
     width: 300px !important;
     padding: 12px !important;
     margin: 50px 0px 0px 0px !important;
+    background-color: #003B38;
+    border-radius: 25px;
 }
 
 /* Calendar css */

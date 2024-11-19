@@ -43,7 +43,7 @@
                 ever since the 1500s.
                     </p>
                 </div>
-                <asp:LinkButton ID="AppointmentPage" class="button" runat="server" OnClick="btnRedirecionar_Click">
+                <asp:LinkButton ID="AppointmentPage" class="button" runat="server" OnClick="btnRedirect_Appointment">
                     Agende uma consulta
                 </asp:LinkButton>
             </div>

@@ -42,13 +42,22 @@ namespace Consultorio_Health.Pages.AppointmentSchedule
         protected global::System.Web.UI.WebControls.LinkButton prevButton;
 
         /// <summary>
-        /// Controle monthYear.
+        /// Controle SelectedMonth.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Para modificar, mova a declaração de campo do arquivo de designer a um arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl monthYear;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl SelectedMonth;
+
+        /// <summary>
+        /// Controle SelectedYear.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Para modificar, mova a declaração de campo do arquivo de designer a um arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl SelectedYear;
 
         /// <summary>
         /// Controle nextButton.
