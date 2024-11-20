@@ -32,10 +32,10 @@ namespace Consultorio_Health.Pages.AppointmentSchedule
         protected void MakeAppointment(object sender, EventArgs e) 
         {
             // Defina a string de conexão com seu banco de dados SQL Server
-             string connectionString = "Data Source=localhost\\SQLEXPRESS;Initial Catalog=escoteiros_db;Integrated Security=True;Encrypt=True;Trust Server Certificate=True";
+             string connectionString = "Data Source=localhost\\SQLEXPRESS;Initial Catalog=consultorio_db;Integrated Security=True;Encrypt=True;TrustServerCertificate=true";
 
             // Comando SQL para inserir dados na tabela
-             string sqlInsert = "INSERT INTO Consultas (Data_Consulta, Hora_Consulta, Paciente, Cpf_Paciente, Telefone) VALUES (@Nome, @Idade)";
+            string sqlInsert = "INSERT INTO Consultas (Data_Consulta, Hora_Consulta, Paciente, Cpf_Paciente, Telefone, Email) VALUES (@DataConsulta, @HoraConsulta, @Nome, @Cpf, @Phone, @Email)";
 
             try
             {
@@ -51,22 +51,22 @@ namespace Consultorio_Health.Pages.AppointmentSchedule
                         // Adicionando parâmetros ao comando para evitar SQL Injection
                         command.Parameters.AddWithValue("@DataConsulta", Session["selectedDate"]);
                         command.Parameters.AddWithValue("@HoraConsulta", Session["selectedTime"]);
-                        command.Parameters.AddWithValue("@Name", Name);
-                        command.Parameters.AddWithValue("@Idade", Cpf);
-                        command.Parameters.AddWithValue("@Email", Email);
-                        command.Parameters.AddWithValue("@Phone", Phone);
+                        command.Parameters.AddWithValue("@Nome", Name.Value);  // Corrigido de @Name para @Nome
+                        command.Parameters.AddWithValue("@Cpf", Cpf.Value);
+                        command.Parameters.AddWithValue("@Phone", Phone.Value);
+                        command.Parameters.AddWithValue("@Email", Email.Value);
 
                         // Executando o comando
-                        int rowsAffected = command.ExecuteNonQuery();
-                        Console.WriteLine($"{rowsAffected} linha(s) inserida(s) com sucesso.");
+                        command.ExecuteNonQuery(); // Removido o ponto e vírgula extra
                     }
                 }
             }
-
             catch (Exception ex)
             {
-                Console.WriteLine("Erro: " + ex.Message);
+                // Tratamento de exceções
+                Console.WriteLine(ex.Message);
             }
+
         }
     }
 }

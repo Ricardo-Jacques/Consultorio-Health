@@ -96,12 +96,12 @@ namespace Consultorio_Health.Pages.AppointmentSchedule
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl consultationCost;
 
         /// <summary>
-        /// Controle MarcarConsulta.
+        /// Controle SubmitForm.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Para modificar, mova a declaração de campo do arquivo de designer a um arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button MarcarConsulta;
+        protected global::System.Web.UI.WebControls.Button SubmitForm;
     }
 }

@@ -32,11 +32,11 @@
                     </div>
                     <div>
                         <label>E-mail</label>
-                        <input id="Email" class="form-input" type="email" value="" runat="server" />
+                        <input id="Email" class="form-input" type="email" value="" runat="server" onchange="ValidateForm()" />
                     </div>
                     <div>
                         <label>Telefone:</label>
-                        <input id="Phone" class="form-input" type="number" value="" runat="server" />
+                        <input id="Phone" class="form-input" type="number" value="" runat="server" oninput="formatPhone()" maxlength="13" placeholder="Digite seu telefone" />
                     </div>
                 </div>
             </div>
@@ -52,8 +52,9 @@
             </div>
         </section>
         <div style="display: flex; justify-content: center; width: 100%;">
-            <asp:Button ID="MarcarConsulta" runat="server" class="button submit" type="submit" name="enviar" Text="Marcar consulta"></asp:Button>
+            <asp:Button ID="SubmitForm" runat="server" class="button submit" type="submit" Text="Marcar consulta" OnClick="MakeAppointment"></asp:Button>
         </div>
     </form>
+    <script src="../Scripts/Agenda.js"></script>
 </body>
 </html>
