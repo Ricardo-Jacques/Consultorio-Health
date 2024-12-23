@@ -106,11 +106,18 @@ a.next-page {
     text-align: center;
     padding: 8px;
     border-radius: 4px;
-    }
+}
 
 .days div:hover {
     background-color: #ddd;
     cursor: pointer;
+}
+
+a.occupiedDay {
+    height: 25px !important;
+    text-align: center !important;
+    border-radius: 16px;
+    background-color: orange;
 }
 
 a.day {

@@ -57,7 +57,7 @@ namespace Consultorio_Health.Pages.AppointmentSchedule
                         command.Parameters.AddWithValue("@Email", Email.Value);
 
                         // Executando o comando
-                        command.ExecuteNonQuery(); // Removido o ponto e vírgula extra
+                        command.ExecuteNonQuery();
                     }
                 }
             }

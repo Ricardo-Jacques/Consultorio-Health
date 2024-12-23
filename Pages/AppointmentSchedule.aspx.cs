@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Drawing;
-using System.Linq;
+using System.Data.SqlClient;
+using System.Text;
 using System.Web;
 using System.Web.Services.Description;
 using System.Web.UI;
@@ -26,6 +26,8 @@ namespace Consultorio_Health.Pages.AppointmentSchedule
             RenderCalendar(currentYear, currentMonth);
         }
 
+        // Lista para armazenar as datas ocupadas
+        List<DateTime> datesOccupied = new List<DateTime>();
         public void RenderCalendar(int currentYear, int currentMonth)
         {
             DateTime firstDay = new DateTime(currentYear, currentMonth, 1);
@@ -37,7 +39,6 @@ namespace Consultorio_Health.Pages.AppointmentSchedule
             // Determina o primeiro dia da semana (0 = domingo, 1 = segunda-feira, etc.)
             int firstDayOfWeek = (int)firstDay.DayOfWeek;
 
-            // Adiciona placeholders para alinhar o primeiro dia do mês
             for (int i = 0; i < firstDayOfWeek; i++)
             {
                 Label placeholder = new Label();
@@ -47,16 +48,61 @@ namespace Consultorio_Health.Pages.AppointmentSchedule
             }
 
             // Preenche os dias do mês
+            try
+            {
+                string connectionString = "Data Source=localhost\\SQLEXPRESS;Initial Catalog=consultorio_db;Integrated Security=True;Encrypt=True;TrustServerCertificate=true";
+
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+
+                    string sql = "SELECT data_consulta FROM consultas WHERE data_consulta IS NOT NULL";
+
+                    using (SqlCommand command = new SqlCommand(sql, connection))
+                    {
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                if (reader.GetDateTime(0).Month == currentMonth)
+                                {
+                                    datesOccupied.Add(reader.GetDateTime(0));  // Lê o valor da primeira coluna
+                                }
+                            }
+                        }
+                    }
+                }
+
+                datesOccupied.Sort();
+            }
+            catch (Exception ex)
+            {
+                // Tratar erro (exibir, logar, etc.)
+                Console.WriteLine(ex.Message);
+            }
+
             int daysInMonth = DateTime.DaysInMonth(currentYear, currentMonth);
             for (int i = 1; i <= daysInMonth; i++)
             {
+                DateTime currentDay = new DateTime(currentYear, currentMonth, i);
                 LinkButton day = new LinkButton();
+
                 day.CssClass = "day";
-                day.Text = i.ToString();
+                day.Text = currentDay.Day.ToString();
                 day.CommandArgument = currentMonth.ToString();  // Armazena o mês no CommandArgument
                 day.Click += new EventHandler(SelectDate);
 
-                days.Controls.Add(day);
+                // Verifica se o dia está ocupado
+                foreach (DateTime date in datesOccupied)
+                {
+                    if (date.Date == currentDay.Date)
+                    {
+                        day.CssClass = "occupiedDay";  // Modifica a classe se o dia estiver ocupado
+                        break; // Não é necessário continuar verificando depois de encontrar o dia ocupado
+                    }
+                }
+
+                days.Controls.Add(day); // Adiciona o dia (ocupado ou não) ao controle
             }
 
         }
@@ -154,7 +200,6 @@ namespace Consultorio_Health.Pages.AppointmentSchedule
             // Atualiza a div com a data e o horário completo
             consultationDay.InnerText = $"{Session["selectedDay"]} de {Session["monthString"]} às {_selectedTime}";
         }
-
 
         protected void NextMonth(object sender, EventArgs e)
         {
